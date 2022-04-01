@@ -18,6 +18,7 @@ body {
   grid-template-rows: repeat(16, auto);
   padding: 30px;
 }
+
 .colDiv {
     padding: 0px;
     border: 1px solid black;
