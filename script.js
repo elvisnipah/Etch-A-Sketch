@@ -30,7 +30,7 @@ function changeColor(input) {
 //this function changes the dimensions of the grid with the click of a button and a prompt
 let useBtn = () => {
     document.querySelector("#container").innerHTML = ""; //clear the original grid
-    let input = window.prompt("Enter the number of squares per side: ");
+    let input = window.prompt("Enter the number of squares per side (100 Max): ");
     if (input <= 100) {
         document.querySelector("#container").style.gridTemplateColumns = `repeat(${input}, auto)`; //change the dimensions of the grid to the number entered
         for(m = 0; m < (input * input); m++){
