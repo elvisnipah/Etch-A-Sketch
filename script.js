@@ -1,17 +1,55 @@
 const container = document.querySelector("#container");
-const gridDiv = document.createElement("div");
-gridDiv.classList.add("flex-grid");
-gridDiv.textContent = "y";
+const colDiv = document.createElement("div");
+colDiv.classList.add("colDiv");
+const btn = document.querySelector("#btn");
 
-let createDiv = () => {
-    for (i = 0; i < 256; i++) {
-        container.appendChild(gridDiv.cloneNode(true));
+
+let createDiv = (num) => {
+    for(x = 0; x < num; x++){
+        container.appendChild(colDiv.cloneNode(true));
+        
     }
 }
+createDiv(256);
+changeColor(256);
 
-createDiv();
+function changeColor(input) {
+    let hover = document.querySelectorAll(".colDiv");
+    for(i = 0; i < input; i++){
+        hover[i].addEventListener("mouseover", function(event){
+            event.target.style.backgroundColor = "aqua";
+        });
+    }   
+}
 
-let hover = document.querySelector("#container");
-hover.addEventListener("mouseover", function(event){
-    event.target.style.backgroundColor = "aqua";
-})
+let useBtn = () => {
+    document.querySelector("#container").innerHTML = "";
+    let input = window.prompt("Enter the number of squares per side: ");
+    if (input <= 100) {
+        document.querySelector("#container").style.gridTemplateColumns = `repeat(${input}, auto)`;
+        for(m = 0; m < (input * input); m++){
+            container.appendChild(colDiv.cloneNode(true));
+        }
+    }
+    else {
+        alert('Too many boxes!')
+    }
+    changeColor(input * input);
+}
+
+
+btn.addEventListener("click", useBtn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,22 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 body {
-    height: 100vh;
     display: flex;
-    justify-content:space-between;
-    
+    flex-direction: column;
+    height: 100vh;
+    width: 100vh;
 }
 
 #container {
+  height: 100vh;
+  width: 100vw; 
+  display: grid;
+  grid-template-columns: repeat(16, auto);
+  grid-template-rows: repeat(16, auto);
+  padding: 30px;
+}
+.colDiv {
+    padding: 0px;
+    border: 1px solid black;
+}
+
+.button {
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
-.flex-grid {
-    width: 6.25%;
-    height: 6.25%;
-    
-}
-
-.new-color {
-    background-color: aqua;
-}
